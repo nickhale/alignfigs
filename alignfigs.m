@@ -1,16 +1,16 @@
-function sortfigs(varargin)
-%SORTFIGS   Arrange all open figure windows nicely.
-%   SORTFIGS() arranges all the open current figure windows to fit nicely on the
+function alignfigs(varargin)
+%alignfigs   Arrange all open figure windows nicely.
+%   ALIGNFIGS() arranges all the open current figure windows to fit nicely on the
 %   screen in a grid. If they won't fit, then the size is reduced uniformly.
 %
-%   SORTFIGS(N) specifies that there should be N columns.
+%   ALIGNFIGS(N) specifies that there should be N columns.
 %
 %   Note that if not all windows have the same size, they will be adjusted to be
 %   so (to the smallest open window).
 %
 %   Examples:
-%       close all, for k = 1:8, figure, end, sortfigs()
-%       close all, for k = 1:15, figure, end, sortfigs(5)
+%       close all, for k = 1:8, figure, end, alignfigs()
+%       close all, for k = 1:15, figure, end, alignfigs(5)
 
 % Nick Hale - Dec 2014.
 
@@ -59,7 +59,7 @@ if ( nh > nx*ny || nx > nxMax )
     for k = 1:nh
         set(h(k), 'position', [p(k,1:2), .9*p(k,3:4)]);
     end
-    sortfigs(varargin{:});
+    alignfigs(varargin{:});
     return
 end
 
