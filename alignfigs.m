@@ -16,8 +16,8 @@ function alignfigs(nx)
 %           - v2.0 Jan 2019.
 
 padding = true;
-toolbars = false;
-menubars = false;
+toolbars = true;
+menubars = true;
 
 h = findobj('Type', 'figure');
 nh = numel(h);
